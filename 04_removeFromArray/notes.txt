@@ -1,0 +1,35 @@
+function (array, values in rest parameters)
+
+    for i=0, i<restArray.lenght, i++
+        for j=0, j<array.lenght, j++
+            if array[j]=restArray[i]
+                array.splice(j, 1)
+    return array;
+
+test 'remove multiple of the same value' not passed
+I suspect it's because when an element is deleted all index values in the array move. 
+
+
+possible correction: to save elements from the main array that are not equal to the element for restArray currently being iterated in a new array and either:
+returning that result array or making so that the main array values change to resultArray and return the main array variable. 
+
+note to self: didn't work.
+
+
+possible solution 2: 
+use filter method and pass it a new function that 
+
+
+
+====================================================================
+
+const removeFromArray = function (array, ...valuesToDelete) {
+    for (let i = 0; i < valuesToDelete.length; i++) {
+        for (let j = 0; j < array.length; j++) {
+            if (array[j] === valuesToDelete[i]) {
+                array.splice(j, 1);
+            }
+        }
+    }
+    return array;
+};
