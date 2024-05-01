@@ -16,20 +16,4 @@ returning that result array or making so that the main array values change to re
 note to self: didn't work.
 
 
-possible solution 2: 
-use filter method and pass it a new function that 
-
-
-
-====================================================================
-
-const removeFromArray = function (array, ...valuesToDelete) {
-    for (let i = 0; i < valuesToDelete.length; i++) {
-        for (let j = 0; j < array.length; j++) {
-            if (array[j] === valuesToDelete[i]) {
-                array.splice(j, 1);
-            }
-        }
-    }
-    return array;
-};
+solution: add a j-- at the end to account for the index change each time a value is deleted. 
